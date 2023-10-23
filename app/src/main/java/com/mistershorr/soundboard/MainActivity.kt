@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.Toast
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.mistershorr.soundboard.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -19,19 +20,7 @@ import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var buttonA : Button
-    lateinit var buttonBb : Button
-    lateinit var buttonB : Button
-    lateinit var buttonC : Button
-    lateinit var buttonCs : Button
-    lateinit var buttonD : Button
-    lateinit var buttonDs : Button
-    lateinit var buttonE : Button
-    lateinit var buttonF: Button
-    lateinit var buttonFs : Button
-    lateinit var buttonG : Button
-    lateinit var buttonGs : Button
-    
+
     lateinit var noteList : List<Note>
 
     lateinit var soundPool : SoundPool
@@ -47,7 +36,12 @@ class MainActivity : AppCompatActivity() {
     var fsNote = 0
     var gNote = 0
     var gsNote = 0
-    var gbNote = 0
+    var lowgNote = 0
+
+    var noteMap = HashMap<String, Int>()
+
+    //instance var for viewbinding
+    private lateinit var binding: ActivityMainBinding
 
     companion object {
         val TAG = "MainActivity"
@@ -56,44 +50,30 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //define the binding variable
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        wireWidgets()
         initializeSoundPool()
         setListeners()
         loadNotes()
     }
 
+
     private fun setListeners() {
         val soundBoardListener = SoundBoardListener()
-        buttonA.setOnClickListener(soundBoardListener)
-        buttonBb.setOnClickListener(soundBoardListener)
-        buttonB.setOnClickListener(soundBoardListener)
-        buttonC.setOnClickListener(soundBoardListener)
-        buttonCs.setOnClickListener(soundBoardListener)
-        buttonD.setOnClickListener(soundBoardListener)
-        buttonDs.setOnClickListener(soundBoardListener)
-        buttonE.setOnClickListener(soundBoardListener)
-        buttonF.setOnClickListener(soundBoardListener)
-        buttonFs.setOnClickListener(soundBoardListener)
-        buttonG.setOnClickListener(soundBoardListener)
-        buttonGs.setOnClickListener(soundBoardListener)
-    }
-
-
-    private fun wireWidgets() {
-        buttonA = findViewById(R.id.button_main_a)
-        buttonBb = findViewById(R.id.button_main_bb)
-        buttonB = findViewById(R.id.button_main_b)
-        buttonC = findViewById(R.id.button_main_c)
-        buttonCs = findViewById(R.id.button_main_cs)
-        buttonD = findViewById(R.id.button_main_d)
-        buttonDs =  findViewById(R.id.button_main_ds)
-        buttonE = findViewById(R.id.button_main_e)
-        buttonF = findViewById(R.id.button_main_f)
-        buttonFs = findViewById(R.id.button_main_fs)
-        buttonG = findViewById(R.id.button_main_g)
-        buttonGs = findViewById(R.id.button_main_gs)
+        binding.buttonMainA.setOnClickListener(soundBoardListener)
+        binding.buttonMainBb.setOnClickListener(soundBoardListener)
+        binding.buttonMainB.setOnClickListener(soundBoardListener)
+        binding.buttonMainC.setOnClickListener(soundBoardListener)
+        binding.buttonMainCs.setOnClickListener(soundBoardListener)
+        binding.buttonMainD.setOnClickListener(soundBoardListener)
+        binding.buttonMainDs.setOnClickListener(soundBoardListener)
+        binding.buttonMainE.setOnClickListener(soundBoardListener)
+        binding.buttonMainF.setOnClickListener(soundBoardListener)
+        binding.buttonMainFs.setOnClickListener(soundBoardListener)
+        binding.buttonMainG.setOnClickListener(soundBoardListener)
+        binding.buttonMainGs.setOnClickListener(soundBoardListener)
     }
 
     private fun initializeSoundPool() {
@@ -115,7 +95,28 @@ class MainActivity : AppCompatActivity() {
         fsNote = soundPool.load(this, R.raw.scalefs, 1)
         gNote = soundPool.load(this, R.raw.scaleg, 1)
         gsNote = soundPool.load(this, R.raw.scalegs, 1)
-        gbNote = soundPool.load(this, R.raw.scalelowg,1)
+        lowgNote = soundPool.load(this, R.raw.scalelowg,1)
+
+        //Map usage
+        noteMap.put("A",aNote)
+        //Kotlin lets you use array-like assignment
+        noteMap["Bb"] = bbNote
+        noteMap["B"] = bNote
+        noteMap["C"] = cNote
+        noteMap["Cs"] = csNote
+        noteMap["D"] = dNote
+        noteMap["E"] = eNote
+        noteMap["F"] = fNote
+        noteMap["Fs"] = fsNote
+        noteMap["G"] = gNote
+        noteMap["Gs"] = gsNote
+        noteMap["Gb"] = lowgNote
+
+    }
+
+    private fun playNote(note : String) {
+        //?: is the elvis operator. Lets you use a default value if null
+        playNote(noteMap[note] ?: 0)
     }
 
     private fun playNote(noteId : Int) {
@@ -123,13 +124,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun playSong(song: List<Note>) {
-        for (item in noteList) {
-            when(item.note) {
-
-            }
-
+        for (item in song) {
+            playNote(item.note)
+            delay(item.duration)
         }
     }
+
+    private fun delay(time: Long) {
+        try {
+            Thread.sleep(time)
+        } catch(e: InterruptedException) {
+            e.printStackTrace()
+        }
+    }
+
 
     private fun loadNotes() {
         val inputStream = resources.openRawResource(R.raw.song)
@@ -141,21 +149,9 @@ class MainActivity : AppCompatActivity() {
             object : TypeToken<List<Note>>() {}.type // data type of the list, questions.
         var noteList = gson.fromJson<List<Note>>(jsonString, qType)
 
+        playSong(noteList)
 
-        var list = ""
-        for (item in noteList) {
-            list += item.duration.toString() + " " + item.note + " "
-        }
-
-        var noteString: List<String> = list.split(" ")
-
-        Log.d(TAG, "loadNotes: $noteString")
-
-        for (i in noteString.indices) {
-            noteList += (Note(noteString[i].toInt(),noteString[i+1]))
-        }
-
-
+        Log.d(TAG, "loadNotes: noteList: $noteList")
     }
 
     private inner class SoundBoardListener : View.OnClickListener {
