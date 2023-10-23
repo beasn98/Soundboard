@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun loadNotes() {
-        val inputStream = resources.openRawResource(R.raw.song)
+        val inputStream = resources.openRawResource(R.raw.song1)
         val jsonString = inputStream.bufferedReader().use {
             it.readText()
         }
