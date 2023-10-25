@@ -26,14 +26,20 @@ class MainActivity : AppCompatActivity() {
     lateinit var soundPool : SoundPool
     var aNote = 0
     var bbNote = 0
+    var highbbNote = 0
     var bNote = 0
+    var highbNote = 0
     var cNote = 0
     var csNote = 0
+    var highcsNote = 0
     var dNote = 0
     var dsNote = 0
+    var highdsNote = 0
     var eNote = 0
+    var higheNote = 0
     var fNote = 0
     var fsNote = 0
+    var highfsNote = 0
     var gNote = 0
     var gsNote = 0
     var lowgNote = 0
@@ -55,8 +61,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initializeSoundPool()
-        setListeners()
         loadNotes()
+        setListeners()
     }
 
 
@@ -74,6 +80,11 @@ class MainActivity : AppCompatActivity() {
         binding.buttonMainFs.setOnClickListener(soundBoardListener)
         binding.buttonMainG.setOnClickListener(soundBoardListener)
         binding.buttonMainGs.setOnClickListener(soundBoardListener)
+        binding.buttonMainPlaySong.setOnClickListener {
+            GlobalScope.launch {
+                playSong(noteList)
+            }
+        }
     }
 
     private fun initializeSoundPool() {
@@ -85,14 +96,20 @@ class MainActivity : AppCompatActivity() {
 //        })
         aNote = soundPool.load(this, R.raw.scalea, 1)
         bbNote = soundPool.load(this, R.raw.scalebb, 1)
+        highbbNote = soundPool.load(this, R.raw.scalehighbb, 1)
         bNote = soundPool.load(this, R.raw.scaleb, 1)
+        highbNote = soundPool.load(this, R.raw.scalehighb, 1)
         cNote =  soundPool.load(this, R.raw.scalec, 1)
         csNote = soundPool.load(this, R.raw.scalecs, 1)
+        highcsNote = soundPool.load(this, R.raw.scalehighcs, 1)
         dNote = soundPool.load(this, R.raw.scaled, 1)
         dsNote = soundPool.load(this, R.raw.scaleds, 1)
+        highdsNote = soundPool.load(this, R.raw.scalehighds, 1)
         eNote = soundPool.load(this, R.raw.scalee, 1)
+        higheNote = soundPool.load(this, R.raw.scalehighe, 1)
         fNote = soundPool.load(this, R.raw.scalef, 1)
         fsNote = soundPool.load(this, R.raw.scalefs, 1)
+        highfsNote = soundPool.load(this, R.raw.scalehighfs, 1)
         gNote = soundPool.load(this, R.raw.scaleg, 1)
         gsNote = soundPool.load(this, R.raw.scalegs, 1)
         lowgNote = soundPool.load(this, R.raw.scalelowg,1)
@@ -101,13 +118,20 @@ class MainActivity : AppCompatActivity() {
         noteMap.put("A",aNote)
         //Kotlin lets you use array-like assignment
         noteMap["Bb"] = bbNote
+        noteMap["hBb"] = highbbNote
         noteMap["B"] = bNote
+        noteMap["hB"] = highbNote
         noteMap["C"] = cNote
         noteMap["Cs"] = csNote
+        noteMap["hCs"] = highcsNote
         noteMap["D"] = dNote
+        noteMap["Ds"] = dsNote
+        noteMap["hDs"] = highdsNote
         noteMap["E"] = eNote
+        noteMap["hE"] = higheNote
         noteMap["F"] = fNote
         noteMap["Fs"] = fsNote
+        noteMap["hFs"] = highfsNote
         noteMap["G"] = gNote
         noteMap["Gs"] = gsNote
         noteMap["Gb"] = lowgNote
@@ -123,7 +147,7 @@ class MainActivity : AppCompatActivity() {
         soundPool.play(noteId, 1f, 1f, 1, 0, 1f)
     }
 
-    private fun playSong(song: List<Note>) {
+    private suspend fun playSong(song: List<Note>) {
         for (item in song) {
             playNote(item.note)
             delay(item.duration)
@@ -147,9 +171,7 @@ class MainActivity : AppCompatActivity() {
         val gson = Gson()
         val qType =
             object : TypeToken<List<Note>>() {}.type // data type of the list, questions.
-        var noteList = gson.fromJson<List<Note>>(jsonString, qType)
-
-        playSong(noteList)
+        noteList = gson.fromJson<List<Note>>(jsonString, qType)
 
         Log.d(TAG, "loadNotes: noteList: $noteList")
     }
