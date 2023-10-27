@@ -1,270 +1,270 @@
 [
   {
-    "duration": 500,
+    "duration": 350,
     "note": "Bb"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note": "B"
   },
   {
-    "duration": 667,
+    "duration": 467,
     "note": "Fs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note": "E"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note": "Ds"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note": "Cs"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note": "Bb"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note": "B"
   },
   {
-    "duration": 667,
+    "duration": 467,
     "note": "Gs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note": "hBb"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note": "Gs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note": "Fs"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "hBb"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "hB"
   },
   {
-    "duration": 667,
+    "duration": 467,
     "note" : "hFs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hE"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hDs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hE"
   },
   {
-    "duration": 1333,
+    "duration": 933,
     "note" : "hDs"
   },
   {
-    "duration": 1333,
+    "duration": 933,
     "note" : "hCs"
   },
   {
-    "duration": 1833,
+    "duration": 1283,
     "note" : "hB"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hB"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hBb"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hB"
   },
   {
-    "duration": 1833,
+    "duration": 1283,
     "note" : "hCs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hCs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hB"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hCs"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "hDs"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "hCs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hB"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "hF"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "hFs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hGs"
   },
   {
-    "duration": 2667,
+    "duration": 1867,
     "note" : "hBb"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "Bb"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "B"
   },
   {
-    "duration": 667,
+    "duration": 467,
     "note" : "Fs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "E"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "Ds"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "Cs"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "Bb"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "B"
   },
   {
-    "duration": 667,
+    "duration": 467,
     "note" : "Gs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hBb"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "Gs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "Fs"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "hBb"
   },
   {
-    "duration": 500,
+    "duration": 350,
     "note" : "hB"
   },
   {
-    "duration": 667,
+    "duration": 467,
     "note" : "hFs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hE"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hDs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hE"
   },
   {
-    "duration": 1333,
+    "duration": 933,
     "note" : "hDs"
   },
   {
-    "duration": 1333,
+    "duration": 933,
     "note" : "hCs"
   },
   {
-    "duration": 1000,
+    "duration": 700,
     "note" : "hB"
   },
   {
-    "duration": 667,
+    "duration": 467,
     "note" : "Gs"
   },
   {
-    "duration": 667,
+    "duration": 467,
     "note" : "hBb"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hB"
   },
   {
-    "duration": 1000,
+    "duration": 700,
     "note" : "hCs"
   },
   {
-    "duration": 667,
+    "duration": 467,
     "note" : "hBb"
   },
   {
-    "duration": 667,
+    "duration": 467,
     "note" : "hB"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hCs"
   },
   {
-    "duration": 1000,
+    "duration": 700,
     "note" : "hFs"
   },
   {
-    "duration": 1000,
+    "duration": 700,
     "note" : "hE"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hDs"
   },
   {
-    "duration": 333,
+    "duration": 233,
     "note" : "hCs"
   }
 ]

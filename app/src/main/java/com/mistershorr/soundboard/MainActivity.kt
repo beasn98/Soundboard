@@ -17,16 +17,11 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.HashMap
-import kotlin.math.log
 
 
 class MainActivity : AppCompatActivity() {
 
-
-
-
     lateinit var noteList : List<Note>
-
 
     lateinit var soundPool : SoundPool
     var aNote = 0
@@ -64,8 +59,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //define the binding variable
@@ -77,9 +70,6 @@ class MainActivity : AppCompatActivity() {
         loadNotes()
         setListeners()
     }
-
-
-
 
     private fun setListeners() {
         val soundBoardListener = SoundBoardListener()
@@ -102,10 +92,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun initializeSoundPool() {
-
-
         this.volumeControlStream = AudioManager.STREAM_MUSIC
         soundPool = SoundPool(10, AudioManager.STREAM_MUSIC, 0)
 //        soundPool.setOnLoadCompleteListener(SoundPool.OnLoadCompleteListener { soundPool, sampleId, status ->
@@ -133,7 +120,6 @@ class MainActivity : AppCompatActivity() {
         highgsNote = soundPool.load(this, R.raw.scalehighgs, 1)
         lowgNote = soundPool.load(this, R.raw.scalelowg,1)
 
-
         //Map usage
         noteMap.put("A",aNote)
         //Kotlin lets you use array-like assignment
@@ -157,8 +143,6 @@ class MainActivity : AppCompatActivity() {
         noteMap["Gs"] = gsNote
         noteMap["hGs"] = highgsNote
         noteMap["lG"] = lowgNote
-
-
     }
 
 
@@ -167,11 +151,9 @@ class MainActivity : AppCompatActivity() {
         playNote(noteMap[note] ?: 0)
     }
 
-
     private fun playNote(noteId : Int) {
         soundPool.play(noteId, 1f, 1f, 1, 0, 1f)
     }
-
 
     private suspend fun playSong(song: List<Note>) {
         for (item in song) {
@@ -180,7 +162,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun delay(time: Long) {
         try {
             Thread.sleep(time)
@@ -188,9 +169,6 @@ class MainActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
-
-
-
 
     private fun loadNotes() {
         val inputStream = resources.openRawResource(R.raw.song1)
@@ -205,7 +183,6 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(TAG, "loadNotes: noteList: $noteList")
     }
-
 
     private inner class SoundBoardListener : View.OnClickListener {
         override fun onClick(v: View?) {
@@ -225,8 +202,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
-
-
 }
