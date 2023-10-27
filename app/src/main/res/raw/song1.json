@@ -112,7 +112,159 @@
     "note" : "hCs"
   },
   {
-    "duration": 1833,
+    "duration": 500,
+    "note" : "hDs"
+  },
+  {
+    "duration": 500,
+    "note" : "hCs"
+  },
+  {
+    "duration": 333,
+    "note" : "hB"
+  },
+  {
+    "duration": 500,
+    "note" : "hF"
+  },
+  {
+    "duration": 500,
+    "note" : "hFs"
+  },
+  {
+    "duration": 333,
+    "note" : "hGs"
+  },
+  {
+    "duration": 2667,
+    "note" : "hBb"
+  },
+  {
+    "duration": 500,
+    "note" : "Bb"
+  },
+  {
+    "duration": 500,
+    "note" : "B"
+  },
+  {
+    "duration": 667,
+    "note" : "Fs"
+  },
+  {
+    "duration": 333,
+    "note" : "E"
+  },
+  {
+    "duration": 333,
+    "note" : "Ds"
+  },
+  {
+    "duration": 333,
+    "note" : "Cs"
+  },
+  {
+    "duration": 500,
+    "note" : "Bb"
+  },
+  {
+    "duration": 500,
+    "note" : "B"
+  },
+  {
+    "duration": 667,
+    "note" : "Gs"
+  },
+  {
+    "duration": 333,
+    "note" : "hBb"
+  },
+  {
+    "duration": 333,
+    "note" : "Gs"
+  },
+  {
+    "duration": 333,
+    "note" : "Fs"
+  },
+  {
+    "duration": 500,
+    "note" : "hBb"
+  },
+  {
+    "duration": 500,
+    "note" : "hB"
+  },
+  {
+    "duration": 667,
+    "note" : "hFs"
+  },
+  {
+    "duration": 333,
+    "note" : "hE"
+  },
+  {
+    "duration": 333,
+    "note" : "hDs"
+  },
+  {
+    "duration": 333,
+    "note" : "hE"
+  },
+  {
+    "duration": 1333,
+    "note" : "hDs"
+  },
+  {
+    "duration": 1333,
+    "note" : "hCs"
+  },
+  {
+    "duration": 1000,
+    "note" : "hB"
+  },
+  {
+    "duration": 667,
+    "note" : "Gs"
+  },
+  {
+    "duration": 667,
+    "note" : "hBb"
+  },
+  {
+    "duration": 333,
+    "note" : "hB"
+  },
+  {
+    "duration": 1000,
+    "note" : "hCs"
+  },
+  {
+    "duration": 667,
+    "note" : "hBb"
+  },
+  {
+    "duration": 667,
+    "note" : "hB"
+  },
+  {
+    "duration": 333,
+    "note" : "hCs"
+  },
+  {
+    "duration": 1000,
+    "note" : "hFs"
+  },
+  {
+    "duration": 1000,
+    "note" : "hE"
+  },
+  {
+    "duration": 333,
+    "note" : "hDs"
+  },
+  {
+    "duration": 333,
     "note" : "hCs"
   }
 ]

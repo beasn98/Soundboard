@@ -1,5 +1,6 @@
 package com.mistershorr.soundboard
 
+
 import android.media.AudioManager
 import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
@@ -18,10 +19,14 @@ import kotlinx.coroutines.launch
 import java.util.HashMap
 import kotlin.math.log
 
+
 class MainActivity : AppCompatActivity() {
 
 
+
+
     lateinit var noteList : List<Note>
+
 
     lateinit var soundPool : SoundPool
     var aNote = 0
@@ -38,20 +43,27 @@ class MainActivity : AppCompatActivity() {
     var eNote = 0
     var higheNote = 0
     var fNote = 0
+    var highfNote = 0
     var fsNote = 0
     var highfsNote = 0
     var gNote = 0
     var gsNote = 0
+    var highgsNote = 0
     var lowgNote = 0
 
+
     var noteMap = HashMap<String, Int>()
+
 
     //instance var for viewbinding
     private lateinit var binding: ActivityMainBinding
 
+
     companion object {
         val TAG = "MainActivity"
     }
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,10 +72,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         initializeSoundPool()
         loadNotes()
         setListeners()
     }
+
+
 
 
     private fun setListeners() {
@@ -87,7 +102,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     private fun initializeSoundPool() {
+
 
         this.volumeControlStream = AudioManager.STREAM_MUSIC
         soundPool = SoundPool(10, AudioManager.STREAM_MUSIC, 0)
@@ -108,11 +125,14 @@ class MainActivity : AppCompatActivity() {
         eNote = soundPool.load(this, R.raw.scalee, 1)
         higheNote = soundPool.load(this, R.raw.scalehighe, 1)
         fNote = soundPool.load(this, R.raw.scalef, 1)
+        highfNote = soundPool.load(this, R.raw.scalehighf, 1)
         fsNote = soundPool.load(this, R.raw.scalefs, 1)
         highfsNote = soundPool.load(this, R.raw.scalehighfs, 1)
         gNote = soundPool.load(this, R.raw.scaleg, 1)
         gsNote = soundPool.load(this, R.raw.scalegs, 1)
+        highgsNote = soundPool.load(this, R.raw.scalehighgs, 1)
         lowgNote = soundPool.load(this, R.raw.scalelowg,1)
+
 
         //Map usage
         noteMap.put("A",aNote)
@@ -130,22 +150,28 @@ class MainActivity : AppCompatActivity() {
         noteMap["E"] = eNote
         noteMap["hE"] = higheNote
         noteMap["F"] = fNote
+        noteMap["hF"] = highfNote
         noteMap["Fs"] = fsNote
         noteMap["hFs"] = highfsNote
         noteMap["G"] = gNote
         noteMap["Gs"] = gsNote
-        noteMap["Gb"] = lowgNote
+        noteMap["hGs"] = highgsNote
+        noteMap["lG"] = lowgNote
+
 
     }
+
 
     private fun playNote(note : String) {
         //?: is the elvis operator. Lets you use a default value if null
         playNote(noteMap[note] ?: 0)
     }
 
+
     private fun playNote(noteId : Int) {
         soundPool.play(noteId, 1f, 1f, 1, 0, 1f)
     }
+
 
     private suspend fun playSong(song: List<Note>) {
         for (item in song) {
@@ -154,6 +180,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     private fun delay(time: Long) {
         try {
             Thread.sleep(time)
@@ -161,6 +188,8 @@ class MainActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
+
+
 
 
     private fun loadNotes() {
@@ -173,8 +202,10 @@ class MainActivity : AppCompatActivity() {
             object : TypeToken<List<Note>>() {}.type // data type of the list, questions.
         noteList = gson.fromJson<List<Note>>(jsonString, qType)
 
+
         Log.d(TAG, "loadNotes: noteList: $noteList")
     }
+
 
     private inner class SoundBoardListener : View.OnClickListener {
         override fun onClick(v: View?) {
@@ -194,6 +225,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 
 
 }
