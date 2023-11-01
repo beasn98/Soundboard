@@ -148,6 +148,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun playNote(note : String) {
         //?: is the elvis operator. Lets you use a default value if null
+
         playNote(noteMap[note] ?: 0)
     }
 
@@ -155,20 +156,25 @@ class MainActivity : AppCompatActivity() {
         soundPool.play(noteId, 1f, 1f, 1, 0, 1f)
     }
 
+    private fun playChord() {
+        //playNote()
+    }
+
     private suspend fun playSong(song: List<Note>) {
         for (item in song) {
+
             playNote(item.note)
             delay(item.duration)
         }
     }
 
-    private fun delay(time: Long) {
-        try {
-            Thread.sleep(time)
-        } catch(e: InterruptedException) {
-            e.printStackTrace()
-        }
-    }
+//    private fun delay(time: Long) {
+//        try {
+//            Thread.sleep(time)
+//        } catch(e: InterruptedException) {
+//            e.printStackTrace()
+//        }
+//    }
 
     private fun loadNotes() {
         val inputStream = resources.openRawResource(R.raw.song1)
