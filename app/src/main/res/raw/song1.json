@@ -72,34 +72,16 @@
     "note" : "hE"
   },
   {
-    "duration": 0,
-    "note" : "hDs",
-    "type" : "chord"
-  },
-  {
-    "duration" : 933,
-    "note": "Fs",
-    "type" : "chord"
-  },
-  {
-    "duration": 0,
-    "note" : "hCs",
-    "type" : "chord"
+    "duration": 933,
+    "note" : "hDs"
   },
   {
     "duration": 933,
-    "note" : "Fs",
-    "type" : "chord"
-  },
-  {
-    "duration": 0,
-    "note" : "hB",
-    "type" : "chord"
+    "note" : "hCs"
   },
   {
     "duration": 1283,
-    "note" : "E",
-    "type" : "chord"
+    "note" : "hB"
   },
   {
     "duration": 233,
@@ -114,14 +96,8 @@
     "note" : "hB"
   },
   {
-    "duration": 0,
-    "note" : "hCs",
-    "type" : "chord"
-  },
-  {
     "duration": 1283,
-    "note" : "hBb",
-    "type" : "chord"
+    "note" : "hCs"
   },
   {
     "duration": 233,
@@ -148,60 +124,28 @@
     "note" : "hB"
   },
   {
-    "duration" : 0,
-    "note" : "hCs",
-    "type" : "chord"
+    "duration": 350,
+    "note" : "hF"
   },
   {
     "duration": 350,
-    "note" : "hF",
-    "type" : "chord"
-  },
-  {
-    "duration" : 0,
-    "note": "hCs",
-    "type" : "chord"
-  },
-  {
-    "duration": 350,
-    "note" : "hFs",
-    "type" : "chord"
-  },
-  {
-    "duration" : 0,
-    "note" : "hDs",
-    "type" : "chord"
+    "note" : "hFs"
   },
   {
     "duration": 233,
-    "note" : "hGs",
-    "type" : "chord"
+    "note" : "hGs"
   },
   {
     "duration": 1867,
-    "note" : "hBb",
-    "type" : "chord"
-  },
-  //next two chords sound strange
-  {
-    "duration" : 0,
-    "note" : "Gs",
-    "type" : "chord"
+    "note" : "hBb"
   },
   {
     "duration": 350,
-    "note" : "Bb",
-    "type" : "chord"
-  },
-  {
-    "duration" : 0,
-    "note" : "G",
-    "type" : "chord"
+    "note" : "Bb"
   },
   {
     "duration": 350,
-    "note" : "B",
-    "type" : "chord"
+    "note" : "B"
   },
   {
     "duration": 467,
